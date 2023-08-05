@@ -9,6 +9,8 @@ import io.ktor.server.http.content.*
 import io.ktor.server.routing.get
 import java.io.File
 
+import com.example.routes.*
+
 fun Application.configureRouting() {
     install(StatusPages) {
         exception<Throwable> { call, cause ->
@@ -21,5 +23,6 @@ fun Application.configureRouting() {
         get("/") {
             call.respondText("Hello World!")
         }
+        userRouting()
     }
 }
